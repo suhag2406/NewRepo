@@ -60,7 +60,7 @@ router.get('/try2/:id', async function (req, res, next) {
   }else{
      let result = await deleteIteam(userid);
     if(result.length==0){
-    res.send('enter valid id')
+    res.send('enter valid id hear')
   }
   res.send("deleted")
 }
