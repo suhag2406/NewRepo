@@ -55,15 +55,15 @@ router.post('/list', async function (req, res) {
 router.get('/try2/:id', async function (req, res, next) {
   let userid = req.query.id
   console.log(userid);
-  if(isNaN(userid)){
-    res.send("enter id with number")
-  }else{
-     let result = await deleteIteam(userid);
-    if(result.length==0){
-    res.send('enter valid id hear')
-  }
-  res.send("deleted")
-}
+//   if(isNaN(userid)){
+//     res.send("enter id with number")
+//   }else{
+//      let result = await deleteIteam(userid);
+//     if(result.length==0){
+//     res.send('enter valid id hear')
+//   }
+//   res.send("deleted")
+// }
 })
 module.exports = router;
 
