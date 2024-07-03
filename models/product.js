@@ -1,4 +1,4 @@
-const { _getproducts } = require('../services/db-module')
+const { _getproducts, _addProduct, _productById } = require('../services/db-module')
 const Cart = require('./cart');
 
 
@@ -11,8 +11,9 @@ module.exports = class Product {
         this.price = price;
     }
 
-    save() {
-
+    async save() {
+        await _addProduct(this);
+        return ({ msg: "Product added" });
     }
 
     static deleteById(id) {
@@ -24,6 +25,8 @@ module.exports = class Product {
         return productsData;
     }
 
-    static findById(id, cb) {
+    static async findById(id) {
+        const productData = await _productById(id);
+        return productData;
     }
 };
